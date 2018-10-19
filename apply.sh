@@ -1,22 +1,11 @@
 #!/bin/bash
 
-# demo: cd /root/local-src/VMM-enabling-workspace/kconfig-track;bash apply.sh /root/local-src/VMM-enabling-workspace/kconfig-track /root/nfs/linux;cd /root/nfs/linux
-
+# linux-demo: cd /root/local-src/VMM-enabling-workspace/kconfig-track;bash apply.sh /root/local-src/VMM-enabling-workspace/kconfig-track /root/nfs/linux;cd /root/nfs/linux
+# find . -name "Kconfig*" > demo
 
 CICD=$1
 SRC=$2
 STRUCTURE=feature-structure.txt
-
-cd $SRC
-echo "" > $CICD/$STRUCTURE
-ls *Kconfig >> $CICD/$STRUCTURE
-ls */Kconfig >> $CICD/$STRUCTURE
-ls */*/Kconfig >> $CICD/$STRUCTURE
-ls */*/*/Kconfig >> $CICD/$STRUCTURE
-ls */*/*/*/Kconfig >> $CICD/$STRUCTURE
-ls */*/*/*/*/Kconfig >> $CICD/$STRUCTURE
-ls */*/*/*/*/*/Kconfig >> $CICD/$STRUCTURE
-ls */*/*/*/*/*/*/Kconfig >> $CICD/$STRUCTURE
 
 cat $CICD/$STRUCTURE | sort | uniq | tee $CICD/$STRUCTURE > /dev/null
 
