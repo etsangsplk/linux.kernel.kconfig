@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# linux-demo: cd /root/local-src/VMM-enabling-workspace/kconfig-track;bash apply.sh /root/local-src/VMM-enabling-workspace/kconfig-track /root/nfs/linux;cd /root/nfs/linux
+# linux-demo: cd /root/local-src/VMM-enabling-workspace/linux.kernel.kconfig;rm -rf `ls -1 -d */`;bash apply.sh /root/local-src/VMM-enabling-workspace/linux.kernel.kconfig /root/nfs/linux;cd /root/nfs/linux
 # find . -name "Kconfig*" > demo
 
 CICD=$1
